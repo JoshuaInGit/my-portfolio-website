@@ -6,6 +6,14 @@ import React, { useState } from "react";
 function Home({ scrollToSkills, scrollToProjects }){
     const [isPressed, setIsPressed] = useState(false);
     const [isPressed2, setIsPressed2] = useState(false);
+
+      const handleMouseDown = (setter) => {
+    setter(true);
+  };
+
+  const handleMouseUp = (setter) => {
+    setter(false);
+  };
     return(
         /* Main Container of elements in Homepage*/
         <div className="relative flex h-[700px] w-full items-center justify-center bg-[#292421]">
@@ -39,8 +47,10 @@ function Home({ scrollToSkills, scrollToProjects }){
                  {/* Grid 3 */}
                 <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 h-full w-full rounded-[20px] navigation-hover-effects ${
         isPressed ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090] hover:bg-[#b7b7b7] duration-300"}`} onMouseDown={() => setIsPressed(true)}
-                                                        onMouseUp={() => setIsPressed(false)}
-                                                        onMouseLeave={() => setIsPressed(false)} >
+                                                                                                        onTouchStart={() => handleMouseDown(setIsPressed5)}
+                                                                                                        onMouseUp={() => setIsPressed(false)}
+                                                                                                        onTouchEnd={() => handleMouseUp(setIsPressed5)}
+                                                                                                        onMouseLeave={() => setIsPressed(false)} >
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name  3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] md:text-[35px] lg:text-[5vw]">SKILLS</p>
