@@ -7,11 +7,18 @@ function Home({ scrollToSkills, scrollToProjects }){
     const [isPressed, setIsPressed] = useState(false);
     const [isPressed2, setIsPressed2] = useState(false);
 
-      const handleMouseDown = (setter) => {
+      const handleMouseDown1 = (setter) => {
     setter(true);
   };
 
-  const handleMouseUp = (setter) => {
+  const handleMouseUp1 = (setter) => {
+    setter(false);
+  };
+      const handleMouseDown2 = (setter) => {
+    setter(true);
+  };
+
+  const handleMouseUp2 = (setter) => {
     setter(false);
   };
     return(
@@ -47,9 +54,9 @@ function Home({ scrollToSkills, scrollToProjects }){
                  {/* Grid 3 */}
                 <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 h-full w-full rounded-[20px] navigation-hover-effects ${
         isPressed ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090] hover:bg-[#b7b7b7] duration-300"}`} onMouseDown={() => setIsPressed(true)}
-                                                                                                        onTouchStart={() => handleMouseDown(setIsPressed)}
+                                                                                                        onTouchStart={() => handleMouseDown1(setIsPressed)}
                                                                                                         onMouseUp={() => setIsPressed(false)}
-                                                                                                        onTouchEnd={() => handleMouseUp(setIsPressed)}
+                                                                                                        onTouchEnd={() => handleMouseUp1(setIsPressed)}
                                                                                                         onMouseLeave={() => setIsPressed(false)} >
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
@@ -60,8 +67,10 @@ function Home({ scrollToSkills, scrollToProjects }){
                  {/* Grid 4 */}
                 <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 h-full w-full rounded-[20px] navigation-hover-effects ${
         isPressed2 ? "bg-[#94cd5b] duration-[25ms]" : "bg-[#8A9E76] hover:bg-[#94cd5b] duration-300"}`} onMouseDown={() => setIsPressed2(true)}
-                                                        onMouseUp={() => setIsPressed2(false)}
-                                                        onMouseLeave={() => setIsPressed2(false)}>
+                                                                                                        onTouchStart={() => handleMouseDown2(setIsPressed2)}
+                                                                                                        onMouseUp={() => setIsPressed2(false)}
+                                                                                                        onTouchEnd={() => 2(setIsPressed2)}
+                                                                                                        onMouseLeave={() => setIsPressed2(false)}>
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name 3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] lg:text-[4vw]">PROJECTS</p>

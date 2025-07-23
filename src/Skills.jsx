@@ -28,6 +28,21 @@ function Skills({ scrollToHome, scrollToProjects }){
           const handleClick5 = () => {
                 setisClicked5(prevState5 => !prevState5);
             };
+
+            const handleMouseDown1 = (setter) => {
+    setter(true);
+  };
+
+  const handleMouseUp1 = (setter) => {
+    setter(false);
+  };
+      const handleMouseDown2 = (setter) => {
+    setter(true);
+  };
+
+  const handleMouseUp2 = (setter) => {
+    setter(false);
+  };
     return(
         <div className="mt-[50px] lg:mt-[100px] relative flex h-[700px] bg-[#292421] w-full justify-center items-center">
             <div className="absolute grid h-[95%] w-[95%] grid-cols-2 grid-rows-[auto_auto_1fr] gap-1 lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr]">
@@ -60,8 +75,10 @@ function Skills({ scrollToHome, scrollToProjects }){
                 {/**grid 3 */}
                 <div onClick={scrollToHome} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 rounded-[20px] lg:col-start-3 lg:row-start-1 navigation-hover-effects ${
         isPressed3 ? "bg-[#94cd5b] duration-[25ms]" : "bg-[#8A9E76] hover:bg-[#94cd5b] duration-300"}`} onMouseDown={() => setIsPressed3(true)}
-                                                        onMouseUp={() => setIsPressed3(false)}
-                                                        onMouseLeave={() => setIsPressed3(false)}>
+                                                                                                        onTouchStart={() => handleMouseDown1(setIsPressed3)}
+                                                                                                        onMouseUp={() => setIsPressed3(false)}
+                                                                                                         onTouchEnd={() => handleMousUp1(setIsPressed3)}
+                                                                                                        onMouseLeave={() => setIsPressed3(false)}>
                     <div className="flex flex-col">
                         <p className="navigation-clue navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name 3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] md:text-[35px] lg:text-[5vw] text-center">HOME</p>
@@ -70,8 +87,10 @@ function Skills({ scrollToHome, scrollToProjects }){
                 {/**grid 4 */}
                 <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 lg:grid-rows-2 rounded-[20px] lg:col-start-3 lg:row-start-2 navigation-hover-effects ${
         isPressed4 ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090]  hover:bg-[#b7b7b7] duration-300"}`} onMouseDown={() => setIsPressed4(true)}
-                                                        onMouseUp={() => setIsPressed4(false)}
-                                                        onMouseLeave={() => setIsPressed4(false)}>
+                                                                                                        onTouchStart={() => handleMouseDown2(setIsPressed4)}
+                                                                                                        onMouseUp={() => setIsPressed4(false)}
+                                                                                                         onTouchEnd={() => handleMouseUp2(setIsPressed4)}
+                                                                                                        onMouseLeave={() => setIsPressed4(false)}>
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name 3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] lg:text-[4vw]">PROJECTS</p>
