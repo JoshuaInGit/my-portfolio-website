@@ -1,7 +1,11 @@
 import Profile from './assets/profile.png';
 import Fb_icon from './assets/fb_icon.png';
 import Linked_icon from './assets/linked_icon.png';
+import React, { useState } from "react";
+
 function Home({ scrollToSkills, scrollToProjects }){
+    const [isPressed, setIsPressed] = useState(false);
+    const [isPressed2, setIsPressed2] = useState(false);
     return(
         /* Main Container of elements in Homepage*/
         <div className="relative flex h-[700px] w-full items-center justify-center bg-[#292421]">
@@ -33,7 +37,10 @@ function Home({ scrollToSkills, scrollToProjects }){
                 </div>
                 {/*---------------*/}
                  {/* Grid 3 */}
-                <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className="navigation-grid col-span-1 row-span-1 bg-[#909090] h-full w-full rounded-[20px] hover:bg-[#b7b7b7] navigation-hover-effects ">
+                <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#909090] h-full w-full rounded-[20px] hover:bg-[#b7b7b7] navigation-hover-effects ${
+        isPressed ? "bg-[#b7b7b7]" : "bg-[#909090]"}`} onMouseDown={() => setIsPressed(true)}
+                                                        onMouseUp={() => setIsPressed(false)}
+                                                        onMouseLeave={() => setIsPressed(false)} >
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name  3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] md:text-[35px] lg:text-[5vw]">SKILLS</p>
@@ -41,7 +48,10 @@ function Home({ scrollToSkills, scrollToProjects }){
                 </div>
                 {/*---------------*/}
                  {/* Grid 4 */}
-                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className="navigation-grid col-span-1 row-span-1 bg-[#8A9E76] h-full w-full rounded-[20px] hover:bg-[#94cd5b] navigation-hover-effects">
+                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#8A9E76] h-full w-full rounded-[20px] hover:bg-[#94cd5b] navigation-hover-effects ${
+        isPressed2 ? "bg-[#94cd5b]" : "bg-[#8A9E76]"}`} onMouseDown={() => setIsPressed2(true)}
+                                                        onMouseUp={() => setIsPressed2(false)}
+                                                        onMouseLeave={() => setIsPressed2(false)}>
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name 3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] lg:text-[4vw]">PROJECTS</p>
