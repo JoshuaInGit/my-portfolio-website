@@ -71,7 +71,7 @@ body{
 
 /*hover effects*/
 .navigation-hover-effects{
-  @apply hover:scale-110 hover:shadow-lg transition-all duration-300 ease-in-out cursor-pointer;
+  @apply hover:scale-110 hover:shadow-lg transition-all  ease-in-out cursor-pointer;
 }
 .icons-effects{
   @apply hover:scale-110 transition-all duration-300 ease-in-out;

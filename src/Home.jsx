@@ -37,8 +37,8 @@ function Home({ scrollToSkills, scrollToProjects }){
                 </div>
                 {/*---------------*/}
                  {/* Grid 3 */}
-                <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#909090] h-full w-full rounded-[20px] hover:bg-[#b7b7b7] navigation-hover-effects ${
-        isPressed ? "bg-[#b7b7b7]" : "bg-[#909090]"}`} onMouseDown={() => setIsPressed(true)}
+                <div  onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 h-full w-full rounded-[20px] navigation-hover-effects ${
+        isPressed ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090] hover:bg-[#b7b7b7] duration-300"}`} onMouseDown={() => setIsPressed(true)}
                                                         onMouseUp={() => setIsPressed(false)}
                                                         onMouseLeave={() => setIsPressed(false)} >
                     <div className="flex flex-col">
@@ -48,8 +48,8 @@ function Home({ scrollToSkills, scrollToProjects }){
                 </div>
                 {/*---------------*/}
                  {/* Grid 4 */}
-                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#8A9E76] h-full w-full rounded-[20px] hover:bg-[#94cd5b] navigation-hover-effects ${
-        isPressed2 ? "bg-[#94cd5b]" : "bg-[#8A9E76]"}`} onMouseDown={() => setIsPressed2(true)}
+                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 h-full w-full rounded-[20px] navigation-hover-effects ${
+        isPressed2 ? "bg-[#94cd5b] duration-[25ms]" : "bg-[#8A9E76] hover:bg-[#94cd5b] duration-300"}`} onMouseDown={() => setIsPressed2(true)}
                                                         onMouseUp={() => setIsPressed2(false)}
                                                         onMouseLeave={() => setIsPressed2(false)}>
                     <div className="flex flex-col">

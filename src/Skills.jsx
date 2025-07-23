@@ -58,8 +58,8 @@ function Skills({ scrollToHome, scrollToProjects }){
                     </div>
                 </div> 
                 {/**grid 3 */}
-                <div onClick={scrollToHome} style={{ cursor: 'pointer' }} className={`bg-[#8A9E76] navigation-grid col-span-1 rounded-[20px] lg:col-start-3 lg:row-start-1 hover:bg-[#94cd5b] navigation-hover-effects ${
-        isPressed3 ? "bg-[#94cd5b]" : "bg-[#8A9E76]"}`} onMouseDown={() => setIsPressed3(true)}
+                <div onClick={scrollToHome} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 rounded-[20px] lg:col-start-3 lg:row-start-1 navigation-hover-effects ${
+        isPressed3 ? "bg-[#94cd5b] duration-[25ms]" : "bg-[#8A9E76] hover:bg-[#94cd5b] duration-300"}`} onMouseDown={() => setIsPressed3(true)}
                                                         onMouseUp={() => setIsPressed3(false)}
                                                         onMouseLeave={() => setIsPressed3(false)}>
                     <div className="flex flex-col">
@@ -68,8 +68,8 @@ function Skills({ scrollToHome, scrollToProjects }){
                     </div>  
                 </div>
                 {/**grid 4 */}
-                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`bg-[#909090] navigation-grid col-span-1 lg:grid-rows-2 rounded-[20px] lg:col-start-3 lg:row-start-2 hover:bg-[#b7b7b7] navigation-hover-effects ${
-        isPressed4 ? "bg-[#b7b7b7]" : "bg-[#909090]"}`} onMouseDown={() => setIsPressed4(true)}
+                <div onClick={scrollToProjects} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 lg:grid-rows-2 rounded-[20px] lg:col-start-3 lg:row-start-2 navigation-hover-effects ${
+        isPressed4 ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090]  hover:bg-[#b7b7b7] duration-300"}`} onMouseDown={() => setIsPressed4(true)}
                                                         onMouseUp={() => setIsPressed4(false)}
                                                         onMouseLeave={() => setIsPressed4(false)}>
                     <div className="flex flex-col">

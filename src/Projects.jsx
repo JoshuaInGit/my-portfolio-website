@@ -29,8 +29,8 @@ function Projects({ scrollToHome, scrollToSkills }){
                     </div>
                 </div>
                 {/**GRID 3 */}
-                <div onClick={scrollToHome} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#909090] rounded-[20px] sm:col-start-2 sm:row-start-2 lg:col-start-1 lg:row-start-2 hover:bg-[#b7b7b7] hover:shadow-[0_0_8px_4px_#b7b7b7] navigation-hover-effects ${
-        isPressed5 ? "bg-[#b7b7b7]" : "bg-[#909090]"}`} onMouseDown={() => setIsPressed5(true)}
+                <div onClick={scrollToHome} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 rounded-[20px] sm:col-start-2 sm:row-start-2 lg:col-start-1 lg:row-start-2  hover:shadow-[0_0_8px_4px_#b7b7b7] navigation-hover-effects ${
+        isPressed5 ? "bg-[#b7b7b7] duration-[25ms]" : "bg-[#909090] hover:bg-[#b7b7b7] duration-300 "}`} onMouseDown={() => setIsPressed5(true)}
                                                         onMouseUp={() => setIsPressed5(false)}
                                                         onMouseLeave={() => setIsPressed5(false)}>
                     <div className="flex flex-col">
@@ -39,10 +39,10 @@ function Projects({ scrollToHome, scrollToSkills }){
                     </div> 
                 </div>
                 {/**GRID 4 */}
-                <div onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`navigation-grid col-span-1 row-span-1 bg-[#8A9E76] rounded-[20px] sm:col-start-2 sm:row-start-3 lg:col-start-2 lg:row-start-2 hover:bg-[#94cd5b] navigation-hover-effects 
-                    ${isPressed6 ? "bg-[#94cd5b]": "bg-[#8A9E76]"}`} onMouseDown={ () => setIsPressed6(true)}
-                                                                        onMouseUp={ () => setIsPressed6(false)}
-                                                                        onMouseLeave={ () => setIsPressed6(false)}>
+                <div onClick={scrollToSkills} style={{ cursor: 'pointer' }} className={`  ${isPressed6 ? "bg-[#94cd5b]  duration-[25ms]": "bg-[#8A9E76] hover:bg-[#94cd5b] duration-300"} navigation-grid col-span-1 row-span-1 rounded-[20px] sm:col-start-2 sm:row-start-3 lg:col-start-2 lg:row-start-2 navigation-hover-effects
+                   `} onMouseDown={ () => setIsPressed6(true)}
+                                            onMouseUp={ () => setIsPressed6(false)}
+                                            onMouseLeave={ () => setIsPressed6(false)}>
                     <div className="flex flex-col">
                         <p className="navigation-clue 3xs:text-[10px] 2xs:text-[15px] lg:text-[1vhw]">#NAVIGATION</p>
                         <p className="navigation-name 3xs:text-[15px] 2xs:text-[20px] xs:text-[30px] lg:text-[4vw]">SKILLS</p>
