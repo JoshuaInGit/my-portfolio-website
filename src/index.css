@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@theme {
+  --font-42dot: "42dot Sans", "Asta Sans", sans-serif;
+}
+body{
+  overflow: auto;
+}
+
+@theme {
+  --breakpoint-3xs:300px;
+  --breakpoint-2xs: 400px;
+  --breakpoint-xs: 500px;
+  --breakpoint-md1: 800px;
+  --breakpoint-md2: 900px;
+  --breakpoint-3xl: 1400px;
+}
