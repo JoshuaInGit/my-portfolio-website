@@ -1,56 +1,96 @@
-function Projects(){
+import { useState } from 'react';
+import Card from './Card.jsx';
+import ProjectModal from './ProjectModal.jsx';
 
-    return(
-        <div className="flex flex-col sm:flex-row h-auto w-full max-w-[870px] bg-white text-[18px] sm:text-[20px] p-6 mb-[8px] tracking-tighter leading-tight font-42dot relative z-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)]">
-            <div className="flex flex-col gap-10 flex-grow">
-                    <div className="font-42dot font-black ml-[5px]">
-                    <p>Projects</p>
-                </div>
-                <div>
-                    <div className="pl-2 sm:pl-[30px]">
-                        <p className="flex before:content-[''] before:block before:w-2 before:h-2 before:bg-black before:mr-3 before:mt-2 font-42dot font-black">Pantry</p>
-                        <p>A quick tap-and-total checkout app created to replace manual math at my parents' convenience store.</p>
-                        
-                    </div>
-                    <div></div>
-                </div>
-                <div>
-                    <div className="pl-2 sm:pl-[30px]">
-                        <p className="flex before:content-[''] before:block before:w-2 before:h-2  before:bg-black before:mr-3 before:mt-2 font-42dot font-black">Ripe Sense</p>
-                        <p>A mobile app that analyzes vibrations to instantly test and display the ripeness of a watermelon.</p>
-                    </div>
-                    <div></div>
-                </div>
-                <div>
-                    <div className="pl-2 sm:pl-[30px]">
-                        <p className="flex before:content-[''] before:block before:w-2 before:h-2  before:bg-black before:mr-3 before:mt-2 font-42dot font-black">GrandView</p>
-                        <p>A clean, user-friendly property listing app designed for posting and viewing real estate project.</p>
-                    </div>
-                    <div></div>
-                </div>
-                <div>  
-                    <div className="pl-2 sm:pl-[30px]">
-                        <p className="flex before:content-[''] before:block before:w-2 before:h-2  before:bg-black before:mr-3 before:mt-2 font-42dot font-black">IngrediSearch</p>
-                        <p>An ingredient-based recipe finder that displays all available dishes you can cook using what's in your fridge.</p>
-                    </div>
-                </div>
-            </div>
+const projects = [
+    {
+        name: 'Nyx',
+        folder: 'nyx',
+        images: ['nyx1.png', 'nyx2.png', 'nyx3.png','nyx4.png','nyx5.png','nyx6.png'],
+        type: 'Full-stack web app',
+        year: '2026',
+        description: 'A social fitness tracker where users log workouts, post progress photos, track personal records and add friends, with JWT-protected accounts and in-app notifications.',
+        tech: ['React', 'TypeScript', 'Tailwind CSS', 'NestJS', 'Prisma', 'PostgreSQL'],
+    },
+    {
+        name: 'RipeSense',
+        folder: 'ripesense',
+        images: [],
+        type: 'Capstone · IoT + mobile app',
+        year: '2026',
+        description: 'A two-device system that sends a 300 Hz vibration through a fruit and measures the response with an accelerometer to tell ripeness for watermelon, cantaloupe, honeydew and papaya. The ESP32 firmware filters out taps and handling noise, and a Flutter app shows results over Bluetooth and keeps a history.',
+        tech: ['Flutter', 'Dart', 'C++', 'ESP32', 'Bluetooth', 'SQLite'],
+    },
+    {
+        name: 'POS',
+        folder: 'loop-pos',
+        images: [],
+        type: 'Android app',
+        year: '2026',
+        description: 'An offline point-of-sale app for small restaurants and shops: products with images and prices, ordering and checkout, receipt printing, cash drawer, inventory, and a dashboard for revenue, profit and sales.',
+        tech: ['React Native', 'TypeScript', 'Local database'],
+    },
+    {
+        name: 'ThumbReach',
+        folder: 'thumbreach',
+        images: [],
+        type: 'Android app',
+        year: '2026',
+        description: 'A floating button for one-handed phone use that puts volume, brightness, the comment section and the keyboard within thumb reach while scrolling TikTok, Reels or Shorts.',
+        tech: ['React Native', 'TypeScript', 'Android'],
+    },
+    {
+        name: 'Game Space',
+        folder: 'game-space',
+        images: [],
+        type: 'Android app',
+        year: '2026',
+        description: 'A PlayStation-style game launcher where you add your favorite games with cover images and video previews, plus a lock mode that pins the launcher.',
+        tech: ['React Native', 'TypeScript', 'Android'],
+    },
+    {
+        name: 'Pantry',
+        folder: 'pantry',
+        images: ['pantry1.png', 'pantry2.png', 'pantry3.png','pantry4.png'],
+        type: 'Web app',
+        year: '2026',
+        description: "A quick tap-and-total checkout app made to replace manual math at my parents' convenience store, with item search and a live cart total.",
+        tech: ['JavaScript'],
+    },
+];
 
-            <div className="flex flex-row sm:flex-col justify-between sm:justify-around bg-white font-black mt-10 sm:mt-0 sm:mr-[20px] w-full sm:w-[100px] text-right">
-                <div>
-                    <p className="sm:pt-[20px]">2026</p>
-                </div>
-                <div>
-                    <p>2026</p>
-                </div>
-                <div>
-                    <p className="sm:pb-0">2025</p>
-                </div>
-                <div>
-                    <p className="sm:pb-[30px]">2025</p>
-                </div>
+function Projects() {
+    const [open, setOpen] = useState(null);
+
+    return (
+        <Card title="Projects">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {projects.map((p) => (
+                    <button
+                        key={p.name}
+                        type="button"
+                        onClick={() => setOpen(p)}
+                        className="flex flex-col text-left border border-black/10 p-4 sm:p-5 min-w-0 cursor-pointer hover:border-accent transition-colors"
+                    >
+                        <div className="flex items-start justify-between gap-3 w-full">
+                            <h3 className="font-black text-[20px] leading-tight">{p.name}</h3>
+                            <span className="font-black text-[15px] text-black/40 shrink-0">{p.year}</span>
+                        </div>
+                        <p className="text-[13px] font-bold text-accent mt-1">{p.type}</p>
+                        <p className="text-[15px] leading-snug mt-3 flex-grow">{p.description}</p>
+                        <div className="flex flex-wrap gap-1.5 mt-4">
+                            {p.tech.map((t) => (
+                                <span key={t} className="px-2 py-0.5 bg-[#f1f1f6] text-[12px] font-bold">{t}</span>
+                            ))}
+                        </div>
+                        <span className="mt-4 text-[13px] font-bold text-accent">
+                            {p.images.length > 0 ? `View ${p.images.length} screenshot${p.images.length > 1 ? 's' : ''} →` : 'View demo →'}
+                        </span>
+                    </button>
+                ))}
             </div>
-        </div>
+            {open && <ProjectModal project={open} onClose={() => setOpen(null)} />}
+        </Card>
     );
 }
 export default Projects

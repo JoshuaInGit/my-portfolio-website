@@ -1,18 +1,25 @@
-function AboutMe(){
+import Card from './Card.jsx';
 
-    return(
-        <div className="flex flex-col h-auto w-full max-w-[870px] gap-[20px] justify-center mb-[8px] text-[18px] sm:text-[20px] p-6 tracking-tighter leading-tight bg-white relative z-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.1)] font-42dot">
-            <h1 className="font-42dot font-black">About me</h1>
+function AboutMe() {
+    return (
+        <Card title="About me">
+            <div className="flex flex-col gap-4 text-[16px] sm:text-[18px] leading-snug">
                 <p>
-                As a 3rd-year information technology student, I see code as a tool for practical problem-solving. While I'm still developing my skills and expanding my tech toolkit, I don't wait around for class assignments to build things.
+                    I'm a 4th-year Information Technology student who learns by building. I see code as a tool for
+                    solving practical problems, and I don't wait for class assignments to start a project.
                 </p>
                 <p>
-                    In my free time, I love taking on personal projects that solve the immediate, real-world problems I encounter in my own daily routine. Right now, I'm focusing my energy on learning Kotlin for mobile development alongside Web Development.
+                    I build complete applications across the stack: web apps with React and NestJS, and mobile apps with
+                    React Native and Flutter. Most of my projects start from a
+                    problem I run into in daily life, from a checkout app for my parents' store to a one-handed control
+                    app for scrolling short videos.
                 </p>
                 <p>
-                    I’m driven by curiosity, a love for building from scratch, and the constant push to become a better developer every day.
+                    I use AI-assisted development to move fast, then test and debug every feature on real devices until
+                    it works reliably. I'm currently studying AI engineering.
                 </p>
-        </div>
+            </div>
+        </Card>
     );
 }
 export default AboutMe
